@@ -1,25 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            {% if title%}
-            FastAPI Blog - {{title}}
-            {% else %}
-            FastAPI Blog
-            {% endif %}
-        </title>
-    </head>
-    <body>
-        <H1>
-            {% if title%}
-            FastAPI Blog - {{title}}
-            {% else %}
-            FastAPI Blog
-            {% endif %}
-        </H1>
-        {% for p in post: %}
-        <h1>{{p.title}}</h1>
-        <p>{{p.content}}</p>
-        {% endfor%}
-    </body>
-</html>
+{% extends "layout.html" %}
+{% block content %}
+{% for p in post %}
+<h1>{{p.title}}</h1>
+<p>{{p.content}}</p>
+{% endfor%}
+{% endblock content %}
